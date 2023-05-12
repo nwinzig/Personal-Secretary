@@ -1,5 +1,5 @@
 
-from .db import db, environment, SCEHMA, add_prefix_for_prod
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
@@ -8,7 +8,7 @@ from sqlalchemy.orm import relationship
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
-    if environment = 'production':
+    if environment == 'production':
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key = True)
@@ -28,11 +28,11 @@ class User(db.Model, UserMixin):
 class Note(db.Model):
     __tablename__ = 'notes'
 
-    if environment = 'production':
+    if environment == 'production':
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key = True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable = False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable = False)
     title = db.Column(db.String, nullable = False)
     context = db.Column(db.String)
     creation_date = db.Column(db.Date, nullable = False)
@@ -50,11 +50,11 @@ class Note(db.Model):
 class CalendarEvent(db.Model):
     __tablename__ = 'calendar_events'
 
-    if environment = 'production':
+    if environment == 'production':
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key = True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable = False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable = False)
     title = db.Column(db.String, nullable = False)
     context = db.Column(db.String)
     start_date = db.Column(db.Date, nullable = False)
