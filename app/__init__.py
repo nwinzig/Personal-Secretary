@@ -6,8 +6,12 @@ from flask_migrate import Migrate
 # from flask_login import LoginManager
 from .models import db
 from .config import Config
+from .seeds import seed_commands
+
 
 app = Flask(__name__)
+
+app.cli.add_command(seed_commands)
 
 # app.cli.add_command(seed_commands)
 app.config.from_object(Config)

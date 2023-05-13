@@ -3,7 +3,7 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from sqlalchemy.orm import relationship
-
+from datetime import datetime
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -35,7 +35,7 @@ class Note(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable = False)
     title = db.Column(db.String, nullable = False)
     context = db.Column(db.String)
-    creation_date = db.Column(db.Date, nullable = False)
+    creation_date = db.Column(db.Date, nullable = False, default = datetime.now)
 
     def to_dict(self):
         return {
@@ -43,7 +43,7 @@ class Note(db.Model):
             'user_id': self.user_id,
             'title': self.title,
             'context': self.context,
-            'creation_date': self.creation_date
+            'creation_date': self.creation_date.strftime('%m/%d/%Y %I:%M %p')
         }
 
 
