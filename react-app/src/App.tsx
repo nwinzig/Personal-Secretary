@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import Splash from './splash/splash';
+import Nav from './nav/nav';
+import Footer from './footer/footer';
+import Calendar_Page from './calendar/Calendar';
+import Notes_Page from './notes/Notes_page';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Nav />
+        <Routes>
+          <Route path='/' element={<Splash />} />
+          <Route path='/cal' element={<Calendar_Page />} />
+          <Route path='/notes' element={<Notes_Page />} />
+        </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
