@@ -3,11 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Splash from './splash/splash';
-import Nav from './nav/nav';
-import Footer from './footer/footer';
-import Calendar_Page from './calendar/Calendar';
-import Notes_Page from './notes/Notes_page';
 
 
 const root = ReactDOM.createRoot(
@@ -15,9 +10,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Nav />
-    <Splash />
-    <Footer />
+    <App />
   </React.StrictMode>
 );
 
