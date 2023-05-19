@@ -1,10 +1,9 @@
-
+import './nav.css'
 
 function Nav(){
     return(
-        <div>
-            <div>Logo/title</div>
-            <div>links to each section listed below</div>
+        <div className='navContainer'>
+            <h1 className='page_title'>Personal Secretary</h1>
         </div>
     )
 }

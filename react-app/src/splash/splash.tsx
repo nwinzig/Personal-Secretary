@@ -1,9 +1,8 @@
-
+import './splash.css'
 
 function Splash(){
     return(
-        <div>
-            <h1>Personal Secretary</h1>
+        <div className='splashContainer'>
             <ol>
                 <li>Notes</li>
                 <li>Calendar</li>
