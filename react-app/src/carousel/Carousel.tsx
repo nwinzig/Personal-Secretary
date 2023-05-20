@@ -17,19 +17,26 @@ import './carousel.css'
 function Carousel(){
     return (
         <Swiper
+        initialSlide={1}
         effect={"coverflow"}
-        loop={true}
-        modules={[Navigation, Pagination, EffectCoverflow]}
-        spaceBetween={50}
+        grabCursor={true}
+        // focusableElements={'select'}
+        modules={[Pagination, EffectCoverflow]}
+        // spaceBetween={50}
         slidesPerView={"auto"}
         centeredSlides={true}
-        navigation
+        coverflowEffect={{
+            rotate: 30,
+            stretch: -50,
+            depth:100,
+            modifier: 1,
+            slideShadows: true
+        }}
+        // navigation
         pagination= {{clickable: true}}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         >
-            <SwiperSlide id='addBlue'>Profile</SwiperSlide>
             <SwiperSlide id="addRed">Calendar</SwiperSlide>
+            <SwiperSlide id='addBlue'>Profile</SwiperSlide>
             <SwiperSlide id="addGreen">Notes</SwiperSlide>
             {/* <SwiperSlide>Slide 4</SwiperSlide> */}
         </Swiper>
