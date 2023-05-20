@@ -10,9 +10,10 @@ import './carousel.css'
 
 // // test images to fill carousel until I can figure out how to fill them with sample of the users page
 
-// import slide_image1 from '../assets/img1.png'
-// import slide_image2 from '../assets/img2.png'
-// import slide_image3 from '../assets/img3.png'
+import slide_image1 from '../assets/cal.png'
+import slide_image2 from '../assets/calc.png'
+import slide_image3 from '../assets/notePixel.png'
+import slide_image4 from '../assets/prof.png'
 
 function Carousel(){
     return (
@@ -47,10 +48,20 @@ function Carousel(){
         //     clickable:true
         // }}
         >
-            <SwiperSlide id="addRed">Calendar</SwiperSlide>
-            <SwiperSlide id='addBlue'>Profile</SwiperSlide>
-            <SwiperSlide id="addGreen">Notes</SwiperSlide>
-            {/* <SwiperSlide>Slide 4</SwiperSlide> */}
+            <SwiperSlide id="addRed">
+                <img src={slide_image1} alt="Calendar Slide" className="slide-image"/>
+            </SwiperSlide>
+            <SwiperSlide id="addPurple">
+                <img src={slide_image4} alt="Profile Slide" className="slide-image"/>
+            </SwiperSlide>
+            <SwiperSlide id="addGreen">
+                <img src={slide_image3} alt="Notes Slide"
+                className="slide-image"/>
+            </SwiperSlide>
+            <SwiperSlide id='addBlue'>
+                <img src={slide_image2} alt="Calculator Slide"
+                className="slide-image"/>
+            </SwiperSlide>
         </Swiper>
     )
 }
