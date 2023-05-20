@@ -1,15 +1,16 @@
-
+import Carousel from '../carousel/Carousel';
+import './splash.css'
 
 function Splash(){
     return(
-        <div>
-            <h1>Personal Secretary</h1>
-            <ol>
+        <div className='splashContainer'>
+            {/* <ol>
                 <li>Notes</li>
                 <li>Calendar</li>
                 <li>Profile</li>
                 <li>Home</li>
-            </ol>
+            </ol> */}
+            <Carousel />
         </div>
     )
 }
