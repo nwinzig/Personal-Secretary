@@ -20,20 +20,32 @@ function Carousel(){
         initialSlide={1}
         effect={"coverflow"}
         grabCursor={true}
+        // loop={true}
         // focusableElements={'select'}
-        modules={[Pagination, EffectCoverflow]}
+        modules={[Pagination, EffectCoverflow, Navigation]}
         // spaceBetween={50}
         slidesPerView={"auto"}
         centeredSlides={true}
         coverflowEffect={{
-            rotate: 30,
-            stretch: -50,
+            rotate: 0,
+            stretch: -15,
             depth:100,
-            modifier: 1,
+            modifier: 2,
             slideShadows: true
         }}
-        // navigation
-        pagination= {{clickable: true}}
+        navigation
+        pagination = {{
+            clickable:true
+        }}
+        // navigation= {{
+        //     nextEl: '.slide-control-next',
+        //     prevEl: '.slide-control-prev',
+
+        // }}
+        // pagination= {{
+        //     el:'slider-pag',
+        //     clickable:true
+        // }}
         >
             <SwiperSlide id="addRed">Calendar</SwiperSlide>
             <SwiperSlide id='addBlue'>Profile</SwiperSlide>
