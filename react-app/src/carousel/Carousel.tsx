@@ -6,7 +6,7 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-// import '../../node_modules/swiper/css'
+import './carousel.css'
 
 // // test images to fill carousel until I can figure out how to fill them with sample of the users page
 
@@ -17,18 +17,21 @@ import 'swiper/css/navigation'
 function Carousel(){
     return (
         <Swiper
-        modules={[Navigation, Pagination]}
+        effect={"coverflow"}
+        loop={true}
+        modules={[Navigation, Pagination, EffectCoverflow]}
         spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={"auto"}
+        centeredSlides={true}
         navigation
         pagination= {{clickable: true}}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
         >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+            <SwiperSlide id='addBlue'>Profile</SwiperSlide>
+            <SwiperSlide id="addRed">Calendar</SwiperSlide>
+            <SwiperSlide id="addGreen">Notes</SwiperSlide>
+            {/* <SwiperSlide>Slide 4</SwiperSlide> */}
         </Swiper>
     )
 }
