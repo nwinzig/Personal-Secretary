@@ -37,6 +37,8 @@
     flex-direction: column;
 }
 .open-calc{
+    text-decoration: none;
+    color: black;
     font-size: 1.8rem;
     border: 1px solid black;
     text-align: center;

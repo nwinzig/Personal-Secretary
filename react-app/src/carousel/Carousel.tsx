@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {Swiper, SwiperSlide} from 'swiper/react'
 import { EffectCoverflow, Navigation, Pagination} from 'swiper'
 
@@ -62,7 +63,7 @@ function Carousel(){
                 <div className="slide-container">
                     <img src={slide_image2} alt="Calculator Slide"
                     className="slide-image"/>
-                    <div className="open-calc">Calculator</div>
+                    <NavLink to={'/calc'} className="open-calc">Calculator</NavLink>
                 </div>
             </SwiperSlide>
         </Swiper>
