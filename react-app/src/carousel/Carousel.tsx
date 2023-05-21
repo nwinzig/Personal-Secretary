@@ -59,8 +59,11 @@ function Carousel(){
                 className="slide-image"/>
             </SwiperSlide>
             <SwiperSlide id='addBlue'>
-                <img src={slide_image2} alt="Calculator Slide"
-                className="slide-image"/>
+                <div className="slide-container">
+                    <img src={slide_image2} alt="Calculator Slide"
+                    className="slide-image"/>
+                    <div className="open-calc">Calculator</div>
+                </div>
             </SwiperSlide>
         </Swiper>
     )
