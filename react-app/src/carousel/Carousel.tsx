@@ -49,10 +49,11 @@ function Carousel(){
         //     clickable:true
         // }}
         >
-            <SwiperSlide id="addYellow">
+            <SwiperSlide id="addGreen">
                 <div className="slide-container">
-                    <img src={slide_image5} alt="Money Slide" className="slide-image"/>
-                    <NavLink to={'/exp'} className="open-calc">Expenses
+                    <img src={slide_image3} alt="Notes Slide"
+                    className="slide-image"/>
+                    <NavLink to={'/notes'} className="open-calc">Notes
                     </NavLink>
                 </div>
             </SwiperSlide>
@@ -70,11 +71,10 @@ function Carousel(){
                     </NavLink>
                 </div>
             </SwiperSlide>
-            <SwiperSlide id="addGreen">
+            <SwiperSlide id="addYellow">
                 <div className="slide-container">
-                    <img src={slide_image3} alt="Notes Slide"
-                    className="slide-image"/>
-                    <NavLink to={'/notes'} className="open-calc">Notes
+                    <img src={slide_image5} alt="Money Slide" className="slide-image"/>
+                    <NavLink to={'/exp'} className="open-calc">Expenses
                     </NavLink>
                 </div>
             </SwiperSlide>

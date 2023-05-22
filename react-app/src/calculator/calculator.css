@@ -37,17 +37,39 @@
         "q q r s";
     gap: 5px;
 }
+.calc-input button{
+    border-radius: 50px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: rgb(58, 58, 58);
+    border: none;
+    transition:.6s;
+}
+.calc-input button:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: rgb(58,58,58);
+
+}
 #AC{
     grid-area: a;
+    background-color: darkgray;
+    color: black;
 }
 #negative{
     grid-area: b;
+    background-color: darkgray;
+    color:black;
 }
 #percent{
     grid-area: c;
+    background-color: darkgray;
+    color: black;
 }
 #divide{
     grid-area: d;
+    background-color: orange;
 }
 #seven{
     grid-area: e;
@@ -60,6 +82,7 @@
 }
 #multiply{
     grid-area: h;
+    background-color: orange;
 }
 #four{
     grid-area: i;
@@ -72,6 +95,7 @@
 }
 #subtract{
     grid-area: l;
+    background-color: orange;
 }
 #one{
     grid-area: m;
@@ -84,6 +108,7 @@
 }
 #add{
     grid-area: p;
+    background-color: orange;
 }
 #zero{
     grid-area: q;
@@ -93,4 +118,5 @@
 }
 #equal{
     grid-area: s;
+    background-color: orange;
 }
