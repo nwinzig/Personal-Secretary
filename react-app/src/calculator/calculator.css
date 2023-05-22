@@ -1,0 +1,96 @@
+
+.calc-container{
+    width: 100%;
+    height: 100vh;
+    /* margin-top: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 25px; */
+}
+.calc{
+    padding: 5px;
+    border-radius: 20px;
+    margin-top: 80px;
+    margin-bottom: 25px;
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.calc-view{
+    background-color: green;
+    height: 25%;
+}
+.calc-input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: grid;
+    height: 75%;
+    grid-template-areas:
+        "a b c d"
+        "e f g h"
+        "i j k l"
+        "m n o p"
+        "q q r s";
+    gap: 5px;
+}
+#AC{
+    grid-area: a;
+}
+#negative{
+    grid-area: b;
+}
+#percent{
+    grid-area: c;
+}
+#divide{
+    grid-area: d;
+}
+#seven{
+    grid-area: e;
+}
+#eight{
+    grid-area: f;
+}
+#nine{
+    grid-area: g;
+}
+#multiply{
+    grid-area: h;
+}
+#four{
+    grid-area: i;
+}
+#five{
+    grid-area: j;
+}
+#six{
+    grid-area: k;
+}
+#subtract{
+    grid-area: l;
+}
+#one{
+    grid-area: m;
+}
+#two{
+    grid-area: n;
+}
+#three{
+    grid-area: o;
+}
+#add{
+    grid-area: p;
+}
+#zero{
+    grid-area: q;
+}
+#dot{
+    grid-area: r;
+}
+#equal{
+    grid-area: s;
+}

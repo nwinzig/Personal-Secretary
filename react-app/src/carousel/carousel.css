@@ -26,7 +26,33 @@
 #addPurple{
     background-color: purple;
 }
+#addYellow{
+    background-color: yellow;
+}
 .slide-image{
     width: 100%;
+    height: 80%;
+}
+.slide-container{
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.open-calc{
+    text-decoration: none;
+    color: black;
+    font-size: 1.8rem;
+    border: 1px solid black;
+    text-align: center;
+    max-height: 20%;
+    width: 150px;
+    align-self: center;
+    border-radius: 25px;
+    box-shadow: 1px 1px 1px, -1px -1px 1px;
+}
+.open-calc:hover{
+    font-weight: bold;
+    cursor: pointer;
+
 }
