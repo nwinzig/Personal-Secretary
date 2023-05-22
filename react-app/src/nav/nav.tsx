@@ -1,9 +1,10 @@
 import './nav.css'
+import { NavLink } from 'react-router-dom'
 
 function Nav(){
     return(
         <div className='navContainer'>
-            <h1 className='page_title'>Personal Secretary</h1>
+            <NavLink to={'/'} className='page_title'>Personal Secretary</NavLink>
         </div>
     )
 }
