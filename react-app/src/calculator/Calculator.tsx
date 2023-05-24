@@ -3,7 +3,7 @@ import './calculator.css'
 import { useState } from 'react'
 function Calculator_Page(){
 
-    let [value, setValue] = useState<number | string>('0')
+    let [value, setValue] = useState<number | string>('')
     let [holdVal, setHoldVal] = useState<number | string>('')
     // let [value2, setValue2] = useState('0')
     let [operator, setOperator] = useState('')
@@ -21,30 +21,8 @@ function Calculator_Page(){
     }
 
     const handleValues = (val:string) => {
-        //is this the first or second value
-        if(value != '0' && operator !== ''){
-            //second value
-            if(holdVal !== '0'){
-                setValue(value+val)
-            } else{
-                if(value === '0' && val !== '.'){
-                    setHoldVal(value)
-                    setValue(val)
-                } else{
-                    setHoldVal(value)
-                    setValue('0')
-                    setValue(value + val)
-                }
-            }
-        } else{
-            if(value === '0' && val !== '.'){
-                setValue(val)
-            }
-            else{
-                setValue(value+val)
-            }
-        }
-        console.log('hold',holdVal,'op', operator,'val', value)
+        //check if inputing value for primary or secondary number
+
     }
 
     const handleCalculation = () => {
