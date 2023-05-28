@@ -28,12 +28,14 @@ function Calculator_Page(){
         //check if inputing value for primary or secondary number
         if(value && operator){
             if(value2){
+                console.log('inn')
                 setValue2(value2 + val)
             }
             else{
                 setValue2(value)
                 setValue(val)
             }
+            console.log('val 2',value2)
         } else{
             setValue(value+val)
         }
