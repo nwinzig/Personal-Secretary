@@ -4,51 +4,73 @@ import { useState } from 'react'
 function Calculator_Page(){
 
     let [value, setValue] = useState<number | string>('')
-    let [holdVal, setHoldVal] = useState<number | string>('')
-    // let [value2, setValue2] = useState('0')
+    // let [holdVal, setHoldVal] = useState<number | string>('')
+    let [value2, setValue2] = useState<number | string>('')
     let [operator, setOperator] = useState('')
     let [negative, setNegative] = useState(false)
+
+
 
     const handleOperator = (op:string) => {
         setOperator(op)
     }
 
     const handleClear = () => {
-        setValue('0')
-        setHoldVal('')
+        setValue('')
+        setValue2('')
+        // setHoldVal('')
         setOperator('')
         setNegative(false)
     }
 
     const handleValues = (val:string) => {
+        console.log(value)
         //check if inputing value for primary or secondary number
-
+        if(value && operator){
+            if(value2){
+                console.log('inn')
+                setValue2(value2 + val)
+            }
+            else{
+                setValue2(value)
+                setValue(val)
+            }
+            console.log('val 2',value2)
+        } else{
+            setValue(value+val)
+        }
     }
 
     const handleCalculation = () => {
+        console.log(value, operator, value2)
         let result:number
-        let val1:number = Number(holdVal)
+        let val1:number = Number(value2)
         let val2:number = Number(value)
         switch(operator){
             case '+':
                 result = val1 + val2
                 setValue(result)
+                setValue2('')
                 break
             case '-':
                 result = val1 - val2
                 setValue(result)
+                setValue2('')
                 break
             case '/':
                 result = val1 / val2
                 setValue(result)
+                setValue2('')
                 break
             case '*':
                 result = val1 * val2
                 setValue(result)
+                setValue2('')
                 break
             case '%':
                 result = val1/ 100
                 setValue(result)
+                setValue2('')
                 break
         }
     }
@@ -57,7 +79,7 @@ function Calculator_Page(){
         <div className="calc-container">
             <div className="calc">
                 <div className="calc-view">
-                    {value}
+                    {value ? value : 0}
                 </div>
                 <div className="calc-input">
                     <button type='button' onClick={() => handleClear()} id='AC'>AC</button>
